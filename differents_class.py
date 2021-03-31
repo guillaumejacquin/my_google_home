@@ -1,6 +1,6 @@
 class Voice_assistant:
   def __init__(self):
-    self.name = "cecilia legros bébé"
+    self.name = "cécilia le gros bébé"
     self.user_name = "Guillaume"
     self.vitesse = "1.2"
     self.langue = "fr"

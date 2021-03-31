@@ -85,4 +85,23 @@ def change_vitesse_bot(infos):
                 mess = "je n'ai pas compris, veuillez répéter, plus ou moins, ou bien stop si cela vous suffit"
                 say_speech(mess, infos)
 
-          
+
+def params(cmd, infos):
+    if (cmd == "quel est ton nom"):
+        mess = "je m'appelle " + infos.name
+        say_speech(mess, infos)
+
+
+    if (cmd == "change de nom"):
+        change_assistant_name(infos)
+
+    if (cmd == "quel est mon nom"):
+        mess = "votre nom  est " + infos.user_name
+        say_speech(mess, infos)
+
+    if (cmd == "change mon nom"):
+        change_user_name(infos)
+
+    if (cmd == "change ta vitesse"):
+        mess = "votre vitesse  est " + infos.user_name
+        change_vitesse_bot(infos)
