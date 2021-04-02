@@ -5,5 +5,7 @@ class Voice_assistant:
     self.vitesse = "1.2"
     self.langue = "fr"
 
+
+    self.ratio_pileouface = [0, 0]
   def change_name(self, name):
         self.name = name

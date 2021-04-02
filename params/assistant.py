@@ -91,7 +91,10 @@ def params(cmd, infos):
         mess = "je m'appelle " + infos.name
         say_speech(mess, infos)
 
-
+    if (cmd == "éteins-toi"):
+        mess = "D'accord, a très bientot j'espère"
+        say_speech(mess, infos)
+        exit (0)
     if (cmd == "change de nom"):
         change_assistant_name(infos)
 
