@@ -6,6 +6,10 @@ class Voice_assistant:
     self.langue = "fr"
 
 
+    #google_trad
+    self.langage_traduction = "france" 
+
+    #pileouface
     self.ratio_pileouface = [0, 0]
   def change_name(self, name):
         self.name = name

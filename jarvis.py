@@ -4,7 +4,8 @@ from differents_class import *
 from mic import *
 from params.assistant import *
 from datetime import datetime, timedelta
-from jeux.jeux import *
+from jeux.pileouface import *
+from trad.googletrad import *
 
 infos = Voice_assistant()
 listedejeux = ["pile ou face"]
@@ -14,7 +15,7 @@ def say_speech(mess, infos):
     speech.play(speech_vitesse)
 
 def diff_jeux(infos):
-    message = "D'accord, choisissez votre jeu, vous pouvez obtenir la liste des differentes options, avec la commande liste des jeux. Si vous voulez quitter dites la commande retour en arriere!"
+    message = "D'accord, vous voila dans le menu jeu. Choisissez votre jeu, vous pouvez obtenir la liste des differentes options, avec la commande liste des jeux. Si vous voulez quitter dites la commande retour en arriere!"
     say_speech(message, infos)
 
     while True:
@@ -58,6 +59,12 @@ def cmd(cmd):
     if (cmd == "jouons à un jeu"):
         print("ok")
         diff_jeux(infos)
+    
+    if (cmd.startswith('traduis ')):
+        translate(cmd, infos)
+
+
+    
 
 def presentation():
     text = "Bonjour Je suis votre assistant. En quoi puis-je vous aider"

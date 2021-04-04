@@ -10,6 +10,26 @@ def say_speech(mess, infos):
     speech.play(speech_vitesse)
 
 
+def change_language_traduction(infos):
+    mess = "d'accord, quelle langue désirez vous? Vous devez dire le pays de votre choix, exemple France"
+    say_speech(mess, infos)
+    while True:
+            query = myspeech()
+            query = query.lower()
+            infos.langage_traduction = query
+            mess = "Le pays que vous avez choisi est " + str(langage_traduction) + " est ce bien cela?"
+            say_speech(mess, infos)
+            query = myspeech()
+            query = query.lower()
+            if (query == "oui"):
+                mess = "Très bien, votre choix est donc" + langage_traduction
+                say_speech(mess, infos)
+                break
+            else:
+                mess = "d'accord, quel nom voulez vous me donner?"
+                say_speech(mess, infos)
+
+
 def change_assistant_name(infos):
     mess = "d'accord, quel nom voulez vous me donner?"
     say_speech(mess, infos)
