@@ -62,7 +62,7 @@ def change_vitesse_bot(infos):
             if (query == "plus lent"):
                 vit = float(infos.vitesse) - 0.1
                 print(vit)
-                if (vit <= 0.9):
+                if (vit <= 1.0):
                     mess = "Je suis désolé, il m'est encore impossible d'atteindre cette vitesse"
                     say_speech(mess)
                     continue

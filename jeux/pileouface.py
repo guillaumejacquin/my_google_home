@@ -64,8 +64,8 @@ def pileouface(infos):
                 infos.ratio_pileouface[1] += 1
             say_speech(mess, infos)
             time.sleep(1)
-
-            mess = "Vous êtes actuellement à " + str(infos.ratio_pileouface[0]) + " victoires et à " + str(infos.ratio_pileouface[1]) + " défaites .Votre pourcentage de victoire est de " + str(int((infos.ratio_pileouface[0] / (infos.ratio_pileouface[0] + infos.ratio_pileouface[1]))) *100) + "%. Si vous voulez rejouer dites la commande Rejouer"
+            
+            mess = "Vous êtes actuellement à " + str(infos.ratio_pileouface[0]) + " victoires et à " + str(infos.ratio_pileouface[1]) + " défaites .Votre pourcentage de victoire est de " + str(float((infos.ratio_pileouface[0] / (infos.ratio_pileouface[0] + infos.ratio_pileouface[1]))) *100) + "%. Si vous voulez rejouer dites la commande Rejouer"
             say_speech(mess, infos)
             query = myspeech()
             query = query.lower()
