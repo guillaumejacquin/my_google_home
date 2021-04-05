@@ -6,6 +6,7 @@ from params.assistant import *
 from datetime import datetime, timedelta
 from jeux.pileouface import *
 from trad.googletrad import *
+from wikipedio.wiki import *
 
 infos = Voice_assistant()
 listedejeux = ["pile ou face"]
@@ -63,7 +64,8 @@ def cmd(cmd):
     if (cmd.startswith('traduis ')):
         translate(cmd, infos)
 
-
+    if ("wikipédia" in cmd):
+        wiki(infos)
     
 
 def presentation():
