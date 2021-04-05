@@ -11,5 +11,3 @@ class Voice_assistant:
 
     #pileouface
     self.ratio_pileouface = [0, 0]
-  def change_name(self, name):
-        self.name = name
