@@ -11,22 +11,23 @@ def say_speech(mess, infos):
 
 
 def change_language_traduction(infos):
-    mess = "d'accord, quelle langue désirez vous? Vous devez dire le pays de votre choix, exemple France"
+    mess = "d'accord, quelle langue désirez vous? Vous devez dire le pays de votre choix, exemple french"
     say_speech(mess, infos)
     while True:
             query = myspeech()
             query = query.lower()
             infos.langage_traduction = query
-            mess = "Le pays que vous avez choisi est " + str(langage_traduction) + " est ce bien cela?"
+            mess = "Le pays que vous avez choisi est " + str(infos.langage_traduction) + " est ce bien cela?"
+            print(infos.langage_traduction)
             say_speech(mess, infos)
             query = myspeech()
             query = query.lower()
             if (query == "oui"):
-                mess = "Très bien, votre choix est donc" + langage_traduction
+                mess = "Très bien, votre choix est donc" + str(infos.langage_traduction)
                 say_speech(mess, infos)
                 break
             else:
-                mess = "d'accord, quel nom voulez vous me donner?"
+                mess = "d'accord, quelle langue desirez vous?"
                 say_speech(mess, infos)
 
 
@@ -128,3 +129,6 @@ def params(cmd, infos):
     if (cmd == "change ta vitesse"):
         mess = "votre vitesse  est " + infos.user_name
         change_vitesse_bot(infos)
+
+    if (cmd == "change ta langue de traduction"):
+        change_language_traduction(infos)

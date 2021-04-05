@@ -1,20 +1,26 @@
-import smtplib, ssl
+import googletrans
 
-# on rentre les renseignements pris sur le site du fournisseur
-smtp_adress = 'smtp.gmail.com'
-smtp_port = 465
+print(googletrans.LANGUAGES)
+import pycountry
+from say_speech.say_speech import *
+import time
 
-# on rentre les informations sur notre adresse e-mail
-email_adress = "bestgaraneuw@gmail.com"
-email_password = "guiguidu94"
+def translate(text, infos):
+    tmp = text.split()
+    text = str(tmp[1:])
+    initiales_pays = pycountry.countries.search_fuzzy(infos.langage_traduction)
+    print(infos.langage_traduction)
+    texte = "la langue actuelle est :" + str(infos.langage_traduction) + "si vous voulez la changer, vous pouvez la changer avec change la langue de traduction"
+    
+    country = initiales_pays[0]
+    initialeLangue = country.alpha_2  # 'FR'
 
-# on rentre les informations sur le destinataire
-email_receiver = 'pgmendormi@gmail.com'
+    tr = Translator()
+    output = tr.translate(text, initialeLangue)
 
-# on crée la connexion
-context = ssl.create_default_context()
-with smtplib.SMTP_SSL(smtp_adress, smtp_port, context=context) as server:
-  # connexion au compte
-  server.login(email_adress, email_password)
-  # envoi du mail
-  server.sendmail(email_adress, email_receiver, 'le contenu de l\'e-mail')
+    say_speech(output.text, infos)
+    time.sleep(0.5)
+    say_speech(texte, infos)
+
+
+print(pycountry.countries)

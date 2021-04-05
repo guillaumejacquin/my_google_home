@@ -7,7 +7,7 @@ class Voice_assistant:
 
 
     #google_trad
-    self.langage_traduction = "france" 
+    self.langage_traduction = 'french' 
 
     #pileouface
     self.ratio_pileouface = [0, 0]
