@@ -5,6 +5,8 @@ from mic import *
 from params.assistant import *
 from datetime import datetime, timedelta
 from jeux.pileouface import *
+from jeux.aki import *
+
 from trad.googletrad import *
 from wikipedio.wiki import *
 
@@ -39,6 +41,9 @@ def diff_jeux(infos):
         if (query == "pile ou face"):
             pileouface(infos)
 
+        if (query == "akinator"):
+            akinatorus(infos)
+
 
 
 
@@ -66,6 +71,7 @@ def cmd(cmd):
 
     if ("wikipédia" in cmd):
         wiki(infos)
+    
     
 
 def presentation():
