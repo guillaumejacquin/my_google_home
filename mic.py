@@ -20,3 +20,20 @@ def myspeech():
         query = str(speech)
 
      return query
+
+
+def myspeech_pause():
+   var_pause = 1
+
+   r = sr.Recognizer()
+   with sr.Microphone() as source:
+      r.pause_threshold = 1
+      audio = r.listen(source)
+         
+      
+   query = r.recognize_google(audio, language='fr-in')
+
+   if (query == "rallume toi"):
+      var_pause = 0
+
+   return var_pause

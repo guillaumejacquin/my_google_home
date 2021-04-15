@@ -80,17 +80,3 @@ def presentation():
     speech = Speech(text, lang)
     sox_effects = ("speed", infos.vitesse)
     speech.play(sox_effects)
-
-
-def main():
-    presentation()
-    while True:
-        query = myspeech()
-        query = query.lower()
-        print(query)
-        
-        cmd(query)
-
-
-
-main()
